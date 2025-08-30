@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Full-Height Setup ===== */
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ===== Body Layout ===== */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+/* ===== Dark Mode Base ===== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* ===== Global Card / Box Styles ===== */
+.card,
+.box,
+.frame {
+  background: #fff;
+  color: #222;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+body.dark-mode .card,
+body.dark-mode .box,
+body.dark-mode .frame {
+  background: #1e1e1e;
+  color: #f5f5f5;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Navbar Dark Mode ===== */
+.navbar {
+  background: #ffffff;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+body.dark-mode .navbar {
+  background: #1e1e1e;
+}
+
+/* ===== Dropdown Menu Dark Mode ===== */
+.dropdown {
+  background: #ffffff;
+}
+body.dark-mode .dropdown {
+  background: #2a2a2a;
+}
+
+/* ===== Image Dark Mode (Dim Effect) ===== */
+img,
+.picture,
+.frame img {
+  transition: filter 0.4s ease;
+}
+body.dark-mode img,
+body.dark-mode .picture,
+body.dark-mode .frame img {
+  filter: brightness(0.8) contrast(1.1);
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #86efac;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
