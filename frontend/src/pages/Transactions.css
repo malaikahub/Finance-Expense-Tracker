@@ -1,0 +1,234 @@
+.transactions {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Banner wrapper */
+.transactions-banner {
+  position: relative;
+  display: flex;
+  justify-content: center; /* centers the image */
+  margin-top: 2cm; /* image starts 2cm below navbar */
+}
+
+/* Banner image */
+.transactions-banner img {
+  width: 70%;
+  height: auto;
+  display: block;
+}
+
+/* Text block on left */
+.transactions-content {
+  position: absolute;
+  top: 2cm;   /* 3cm below navbar */
+  left: 2cm;  /* 2cm away from left boundary */
+  max-width: 35%;
+  color: #333;
+}
+
+.transactions-content h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: green; /* Heading in green */
+  margin-bottom: 12px;
+}
+
+.transactions-content p {
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.transactions-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* ============================= */
+/* Buttons Styling               */
+/* ============================= */
+.btn-primary {
+  background: linear-gradient(135deg, #0f9d58, #34a853); /* green gradient */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 128, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #34a853, #0f9d58);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 10px rgba(0, 128, 0, 0.3);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+/* Secondary button (outline style) */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #34a853;
+  color: #34a853;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #34a853;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 10px rgba(0, 128, 0, 0.2);
+}
+
+.btn-secondary:active {
+  transform: scale(0.95);
+}
+
+/* Danger button (Delete) */
+.btn-danger {
+  background: linear-gradient(135deg, #d93025, #ea4335);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(220, 20, 60, 0.2);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #ea4335, #d93025);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 10px rgba(220, 20, 60, 0.3);
+}
+
+.btn-danger:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Table Container ---------- */
+.transactions-table-container {
+  margin: 20px auto;
+  padding: 20px;
+  background: #f6fff8; /* very light green background */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 128, 0, 0.15);
+  max-width: 1000px;
+}
+
+/* ---------- Heading ---------- */
+.transactions-table-heading {
+  text-align: center;
+  font-size: 22px;
+  color: #166534; /* dark green */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* ---------- Table ---------- */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #d1fae5; /* subtle border */
+}
+
+/* ---------- Table Header ---------- */
+.transactions-table thead {
+  background: linear-gradient(135deg, #15803d, #16a34a); /* green gradient */
+  color: #ffffff;
+}
+
+.transactions-table th {
+  padding: 14px 16px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* ---------- Table Rows ---------- */
+.transactions-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e6f4ea;
+  text-align: center;
+  color: #111827;
+}
+
+.transactions-table tbody tr:nth-child(even) {
+  background-color: #f0fdf4; /* lighter green for even rows */
+}
+
+.transactions-table tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* white for odd rows */
+}
+
+.transactions-table tbody tr:hover {
+  background-color: #bbf7d0; /* medium-light green hover */
+  transition: 0.3s;
+}
+
+/* ---------- Status Text ---------- */
+.pending-text {
+  color: #f59e0b; /* amber for pending */
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ---------- Buttons Row ---------- */
+.transactions-buttons-row {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* ---------- Buttons ---------- */
+.btn-save,
+.btn-add {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Save Button */
+.btn-save {
+  background: #16a34a; /* medium green */
+  color: #ffffff;
+}
+
+.btn-save:hover {
+  background: #15803d; /* darker green */
+}
+
+/* Add Button */
+.btn-add {
+  background: #dcfce7; /* light green */
+  color: #065f46; /* dark green text */
+}
+
+.btn-add:hover {
+  background: #bbf7d0; /* slightly darker hover */
+}

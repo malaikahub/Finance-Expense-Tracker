@@ -1,0 +1,108 @@
+/* Report.css */
+
+/* ---------- HERO ---------- */
+.report-hero {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 3cm;
+}
+
+.report-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.report-hero-overlay {
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.report-hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.report-hero-subtitle {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+/* ---------- CONTENT ---------- */
+.report-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.transaction-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.transaction-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.transaction-table-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.transaction-table {
+  border-collapse: collapse;
+  width: 70%;
+  max-width: 900px;
+  background: #fff;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.transaction-table th,
+.transaction-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.transaction-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.export-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.goals-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.goals-chart-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.goal-chart-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}

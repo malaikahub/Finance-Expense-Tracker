@@ -1,0 +1,407 @@
+/* ---------------- RESET ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------- HERO BACKGROUND ---------------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen */
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Overlay layer */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ---------------- GLASSMORPHISM CARDS ---------------- */
+.glass {
+  background: rgba(187, 247, 208, 0.3); /* light green glass */
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 15px 20px;
+  border: 1px solid rgba(34,197,94,0.4); /* green border */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  color: #000; /* black text */
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  text-align: center;
+}
+
+.glass:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(34,197,94,0.7);
+  background: rgba(34,197,94,0.2); /* slightly darker green on hover */
+}
+
+/* ---------------- ROWS ---------------- */
+.overlay-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 20px;
+  justify-content: center;
+}
+
+.overlay-charts {
+  display: grid;
+  grid-template-columns: 400px 250px;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* ---------------- TEXT COLORS ---------------- */
+.balance { color: #065f46; }   /* Dark green */
+.income { color: #16a34a; }    /* Green */
+.expense { color: #dc2626; }   /* Red, keep contrast for expense */
+
+.card-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.9;
+  color: #065f46; /* dark green for titles */
+}
+
+.card-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000; /* black for values */
+}
+
+/* ---------------- TABLE (Transactions Section) ---------------- */
+.table-wrapper {
+  max-width: 100%; /* use full width */
+  margin: 20px auto;
+  border-radius: 12px;
+  background: rgba(187, 247, 208, 0.25);
+  backdrop-filter: blur(8px);
+  padding: 12px;
+  overflow-x: auto; /* responsive for small screens */
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem; /* slightly smaller */
+  color: #000;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(34,197,94,0.5);
+  text-align: center;
+}
+
+.transactions-table th {
+  background: rgba(34,197,94,0.7);
+  font-weight: bold;
+  color: #fff;
+}
+
+.transactions-table tr:nth-child(even) {
+  background: rgba(187, 247, 208, 0.35);
+}
+
+.transactions-table tr:nth-child(odd) {
+  background: rgba(134, 239, 172, 0.35);
+}
+
+.transactions-table tr:hover {
+  background: rgba(5,95,70,0.9);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ---------------- BILL REMINDERS SECTION ---------------- */
+.bill-reminders-section {
+  margin: 50px auto;
+  max-width: 900px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(187, 247, 208, 0.3); /* light green */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  color: #000;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #065f46; /* dark green title */
+}
+
+/* ---------------- BUTTONS ---------------- */
+.reminder-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #16a34a; /* green button */
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.reminder-btn:hover {
+  background: #065f46; /* dark green hover */
+}
+
+/* ---------------- NO REMINDERS TEXT ---------------- */
+.no-reminder {
+  color: #065f46; /* dark green */
+  font-size: 0.85rem;
+}
+
+/* Cards Section */
+.cards-container {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.cards-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.add-card-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.add-card-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+/* Grid Layout (resized cards) */
+.small-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5cm, 5cm)); /* fixed width */
+  gap: 1cm; /* ✅ fixed 1cm gap */
+  justify-content: center; /* ✅ centers the grid horizontally */
+  align-items: center;     /* ✅ aligns cards vertically inside grid */
+}
+
+/* Creative Card Styles */
+.creative-card {
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  min-height: 4cm;   /* ✅ fixed height */
+  width: 5cm;        /* ✅ fixed width */
+  border: 2px solid #16a34a; /* ✅ green boundary */
+}
+
+.dark .creative-card {
+  background: linear-gradient(145deg, #1f2937, #111827);
+  color: #f3f4f6;
+  border: 2px solid #22c55e; /* ✅ lighter green border for dark mode */
+}
+
+.card-header {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.15);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.card-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-balance {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #16a34a;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.add-money-btn,
+.save-btn,
+.cancel-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+/* Button Colors */
+.add-money-btn {
+  background: #facc15;
+}
+
+.add-money-btn:hover {
+  background: #eab308;
+  transform: translateY(-2px);
+}
+
+.save-btn {
+  background: #16a34a;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background: #15803d;
+  transform: scale(1.05);
+}
+
+.cancel-btn {
+  background: #dc2626;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background: #b91c1c;
+  transform: scale(1.05);
+}
+
+
+
+
+/* ================= Tax Section ================= */
+.tax-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.tax-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 16px;
+  background: var(--card-bg, #ffffff); /* Light mode */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark Mode Support */
+.dark .tax-box {
+  background: #1f2937; /* Tailwind gray-800 */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.tax-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.tax-text h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-color, #111827);
+}
+
+.dark .tax-text h2 {
+  color: #f9fafb; /* Tailwind gray-50 */
+}
+
+.tax-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--text-muted, #374151);
+}
+
+.dark .tax-text p {
+  color: #d1d5db; /* Tailwind gray-300 */
+}
+
+.promo-btn {
+  background: #facc15; /* Tailwind yellow-400 */
+  border: none;
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.promo-btn:hover {
+  background: #eab308; /* Tailwind yellow-500 */
+  transform: translateY(-2px);
+}
+
+.tax-image img {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .tax-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tax-text {
+    padding-right: 0;
+  }
+
+  .tax-image img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
