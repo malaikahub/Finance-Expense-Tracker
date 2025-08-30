@@ -1,0 +1,243 @@
+/* ===========================
+   NAVBAR BASE STYLES
+=========================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6); /* White transparent */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar.dark {
+  background: rgba(31, 41, 55, 0.7); /* Dark transparent */
+}
+
+/* ===========================
+   INNER CONTAINER
+=========================== */
+.navbar-container {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 70px;
+}
+
+/* ===========================
+   BRAND / LOGO
+=========================== */
+.navbar-left .brand {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937; /* Dark gray on light */
+  transition: color 0.3s;
+}
+
+.navbar.dark .brand {
+  color: #f9fafb; /* Light text on dark */
+}
+
+/* ===========================
+   NAVIGATION LINKS
+=========================== */
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0 14px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1f2937; /* Dark text */
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.3s, background 0.3s, transform 0.2s;
+}
+
+.navbar.dark .nav-link {
+  color: #f9fafb; /* Light text */
+}
+
+.nav-link:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #065f46; /* Accent green */
+  transform: translateY(-2px);
+}
+
+.navbar.dark .nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #a7f3d0;
+}
+
+/* ===========================
+   DROPDOWN MENU
+=========================== */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 10px 0;
+  list-style: none;
+  min-width: 200px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  padding: 6px 16px;
+}
+
+.dropdown-link {
+  text-decoration: none;
+  color: #1f2937;
+  display: block;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-link:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #065f46;
+}
+
+.navbar.dark .dropdown {
+  background: #1f2937;
+}
+
+.navbar.dark .dropdown-link {
+  color: #f9fafb;
+}
+
+.navbar.dark .dropdown-link:hover {
+  background: #065f46;
+  color: #a7f3d0;
+}
+
+/* ===========================
+   RIGHT SIDE (ICONS)
+=========================== */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dark-mode-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: rotate(20deg);
+}
+
+.navbar.dark .dark-mode-toggle {
+  background: #374151;
+}
+
+.navbar.dark .dark-mode-toggle:hover {
+  background: #065f46;
+}
+
+/* User icon */
+.user-icon {
+  cursor: pointer;
+  color: #1f2937;
+  font-size: 20px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar.dark .user-icon {
+  color: #f9fafb;
+}
+
+.user-icon:hover {
+  color: #065f46;
+  transform: scale(1.1);
+}
+
+/* ===========================
+   RESPONSIVE (MOBILE)
+=========================== */
+@media (max-width: 768px) {
+  .navbar-center {
+    display: none; /* Hide links on mobile */
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 22px;
+    cursor: pointer;
+    color: #065f46;
+  }
+
+  .navbar.dark .menu-toggle {
+    color: #a7f3d0;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 10px 0;
+    display: none;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  .mobile-menu .nav-link {
+    padding: 12px 20px;
+  }
+
+  .navbar.dark .mobile-menu {
+    background: #1f2937;
+  }
+}
